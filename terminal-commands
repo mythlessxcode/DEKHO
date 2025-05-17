@@ -1,0 +1,17 @@
+# Initialize git repository (if not already done)
+git init
+
+# Add all files
+git add .
+
+# Commit changes
+git commit -m "Initial commit"
+
+# Add remote repository (replace with your actual repository URL)
+git remote add origin https://github.com/yourusername/your-repo-name.git
+
+# Push to GitHub
+git push -u origin main
+
+# Deploy to GitHub Pages
+npm run deploy
