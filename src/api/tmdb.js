@@ -7,7 +7,7 @@ const REQUEST_TIMEOUT_MS = 10_000;
 
 if (!API_KEY) {
   throw new Error(
-    "Missing VITE_TMDB_API_KEY. Add it to your .env file and restart the Vite dev server."
+    "Missing VITE_TMDB_API_KEY. Set it in .env locally, or in Vercel Project Settings, then rebuild."
   );
 }
 

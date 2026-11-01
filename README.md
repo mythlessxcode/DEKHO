@@ -1,12 +1,32 @@
-# React + Vite
+# DEKHO
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A movie browser built with Vite, React, and ChaiUI. Data comes from [TMDb](https://www.themoviedb.org/).
 
-Currently, two official plugins are available:
+## Local
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+cp .env.example .env
+```
 
-## Expanding the ESLint configuration
+Put your TMDb key in `.env`:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+VITE_TMDB_API_KEY=your_key
+VITE_TMDB_BASE_URL=https://api.themoviedb.org/3
+```
+
+```bash
+npm run dev
+```
+
+## Deploy on Vercel
+
+1. Push this repo to GitHub.
+2. Import the project in [Vercel](https://vercel.com/new). Framework preset: **Vite**. Root directory: the repo root.
+3. Add environment variables (Production, Preview, and Development):
+   - `VITE_TMDB_API_KEY`
+   - `VITE_TMDB_BASE_URL` = `https://api.themoviedb.org/3`
+4. Deploy. Routes `/`, `/movies`, and `/movie/:id` are rewritten to `index.html` via `vercel.json`.
+
+Vite inlines `VITE_*` values at build time. If you change a key, trigger a new deployment.
